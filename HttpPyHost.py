@@ -218,7 +218,8 @@ def _selfCallStop():
         print("Call to stop socket listener")
         callToClose = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         callToClose.connect((_hostOrDomain,_port))    
-
+    except Exception as ell:
+            print(json.dumps({"code": "0", "message": f"{ell}"}))
 
 _selfCallStop()
 
